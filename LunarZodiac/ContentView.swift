@@ -8,12 +8,64 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentyear = 2020
+    @State private var year = 0
+    @State private var imageyear = 0
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(String(currentyear))
+                .fontWeight(.black)
+                .font(.largeTitle)
+                .foregroundColor(.red)
+                .padding()
+            
+            Spacer()
+            
+            Image("image\(imageyear)")
+                .resizable()
+                .scaledToFit()
+                .padding()
+            
+            Spacer()
+           
+            
+            HStack{
+                Button("<"){
+                    if imageyear > 0{
+                        imageyear = imageyear - 1
+                    }else{
+                        imageyear = 11
+                    }
+                    
+                    if currentyear > 0{
+                        currentyear = currentyear - 1
+                    }else{
+                        currentyear = 2023
+                    }
+                }
+                Spacer()
+                
+                Button(">"){
+                    if imageyear < 11{
+                        imageyear = imageyear + 1
+                    }   else{
+                        imageyear = 0
+                    }
+                    
+                    if currentyear > 0{
+                        currentyear = currentyear + 1
+                    }else{
+                        currentyear = 2023
+                    }
+                }
+                
+            
+            }
+            .buttonStyle(.borderedProminent)
+            .fontWeight(.black)
+            .font(.largeTitle)
+            .tint(.red)
+            
         }
         .padding()
     }
