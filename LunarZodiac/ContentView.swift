@@ -26,25 +26,28 @@ struct ContentView: View {
                 .padding()
             
             Spacer()
-           
+            
             
             HStack{
-                Button("<"){
+                Button {
                     if imageyear > 0{
-                        imageyear = imageyear - 1
+                        imageyear -= 1
                     }else{
                         imageyear = 11
                     }
                     
                     if currentyear > 0{
-                        currentyear = currentyear - 1
+                        currentyear -= 1
                     }else{
                         currentyear = 2023
                     }
+                } label: {
+                    Image(systemName: "chevron.left")
                 }
+                
                 Spacer()
                 
-                Button(">"){
+                Button {
                     if imageyear < 11{
                         imageyear = imageyear + 1
                     }   else{
@@ -56,9 +59,10 @@ struct ContentView: View {
                     }else{
                         currentyear = 2023
                     }
+                } label: {
+                    Image(systemName: "chevron.right")
                 }
                 
-            
             }
             .buttonStyle(.borderedProminent)
             .fontWeight(.black)
