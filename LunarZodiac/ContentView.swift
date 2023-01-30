@@ -49,13 +49,13 @@ struct ContentView: View {
                 
                 Button {
                     if imageyear < 11{
-                        imageyear = imageyear + 1
+                        imageyear += 1
                     }   else{
                         imageyear = 0
                     }
                     
                     if currentyear > 0{
-                        currentyear = currentyear + 1
+                        currentyear += 1
                     }else{
                         currentyear = 2023
                     }
