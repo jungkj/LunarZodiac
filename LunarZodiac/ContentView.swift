@@ -63,11 +63,13 @@ struct ContentView: View {
                     Image(systemName: "chevron.right")
                 }
                 
+                
             }
             .buttonStyle(.borderedProminent)
             .fontWeight(.black)
             .font(.largeTitle)
             .tint(.red)
+            .padding()
             
         }
         .padding()
