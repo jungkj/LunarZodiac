@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var currentyear = 2020
-    @State private var year = 0
-    @State private var imageyear = 0
+    @State private var currentyear = 2023
+    @State private var imageyear = 3
     var body: some View {
         VStack {
             Text(String(currentyear))
